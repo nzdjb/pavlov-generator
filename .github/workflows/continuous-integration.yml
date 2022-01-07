@@ -25,6 +25,8 @@ jobs:
           # allow unsecure commands add-path and set-env until v7 is available
           # see: https://github.com/gabrielfalcao/pyenv-action/issues/99
           ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+        with:
+          default: 3.10
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install dependencies and lint
