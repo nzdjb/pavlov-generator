@@ -19,18 +19,14 @@ jobs:
     name: Pylint
     runs-on: ubuntu-latest
     steps:
-      - name: setup pyenv
-        uses: gabrielfalcao/pyenv-action@v8
-        env:
-          # allow unsecure commands add-path and set-env until v7 is available
-          # see: https://github.com/gabrielfalcao/pyenv-action/issues/99
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-        with:
-          default: 3.10
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Setup python
+        uses: actions.setup-python@v2
+        with:
+          python-version: 3.10
       - name: Install dependencies and lint
         run: |
-          pip install pipenv
-          pipenv install --dev
-          pipenv run pylint pavlov_generator
+          pip install poetry
+          poetry install
+          poetry run pylint pavlov_generator
