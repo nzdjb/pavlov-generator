@@ -20,4 +20,4 @@ jobs:
     steps:
       - uses: nzdjb/pylint-action@main
         with:
-          package-path: pavlov-generator
+          package-path: pavlov_generator
