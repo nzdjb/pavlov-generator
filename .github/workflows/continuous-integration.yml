@@ -19,3 +19,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: nzdjb/pylint-action@main
+        with:
+          package-path: pavlov-generator
